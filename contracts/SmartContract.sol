@@ -153,5 +153,6 @@ contract DinoNFTs is ERC721Enumerable, Ownable {
 
   function withdraw() public payable onlyOwner {
   require(payable(msg.sender).send(address(this).balance),'');
+  payable(msg.sender).send(address(this).balance);
   }
 }
